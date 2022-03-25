@@ -5,10 +5,6 @@ variable "region" {
   default     = "us-east-2"
 }
 
-variable "aws_assume_role_arn" {
-  type = string
-}
-
 variable "parent_zone_name" {
   type        = string
   description = "DNS zone name (E.g. staging.cloudposse.co)"
