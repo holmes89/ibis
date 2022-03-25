@@ -4,6 +4,7 @@ variable "region" {
   description = "AWS Region for S3 bucket"
   default     = "us-east-2"
 }
+
 variable "aws_assume_role_arn" {
   type = string
 }
