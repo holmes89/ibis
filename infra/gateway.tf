@@ -67,16 +67,16 @@ resource "aws_api_gateway_deployment" "rest_api" {
   rest_api_id = aws_api_gateway_rest_api.rest_api.id
   stage_name  = "v1"
 
-  redeployment = sha1(jsonencode([
-      aws_api_gateway_resource.proxy.id,
-      aws_api_gateway_resource.proxy_root.id,
-      aws_api_gateway_method.cors.id,
-      aws_api_gateway_method.proxy.id,
-      aws_api_gateway_method.proxy_root.id,
-      aws_api_gateway_integration.cors.id,
-      aws_api_gateway_integration.lambda_root.id,
-      aws_api_gateway_integration.lambda.id,
-    ]))
+  # redeployment = sha1(jsonencode([
+  #     aws_api_gateway_resource.proxy.id,
+  #     aws_api_gateway_resource.proxy_root.id,
+  #     aws_api_gateway_method.cors.id,
+  #     aws_api_gateway_method.proxy.id,
+  #     aws_api_gateway_method.proxy_root.id,
+  #     aws_api_gateway_integration.cors.id,
+  #     aws_api_gateway_integration.lambda_root.id,
+  #     aws_api_gateway_integration.lambda.id,
+  #   ]))
 }
 
 #Logging

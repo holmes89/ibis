@@ -6,8 +6,7 @@ data "aws_iam_policy_document" "ci" {
       "lambda:UpdateFunctionCode",
     ]
     resources = [
-      aws_lambda_function.api.arn,
-      aws_lambda_function.consumer.arn
+      join("", aws_lambda_function.api.*.arn),
     ]
   }
   statement {
