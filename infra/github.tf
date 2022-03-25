@@ -20,7 +20,7 @@ data "aws_iam_policy_document" "ci" {
       "s3:GetObjectAcl"
     ]
     resources = [
-      module.cdn.s3_bucket.arn,
+      module.cdn.s3_bucket_arn,
     ]
   }
 }
