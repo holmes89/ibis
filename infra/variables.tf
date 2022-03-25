@@ -8,11 +8,6 @@ variable "aws_assume_role_arn" {
   type = string
 }
 
-variable "cognito_internal_user_pool_id" {
-  description = "ID of internal user pool for verification."
-  type        = string
-}
-
 variable "parent_zone_name" {
   type        = string
   description = "DNS zone name (E.g. staging.cloudposse.co)"
