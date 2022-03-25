@@ -25,7 +25,7 @@ module "ui_acm_request_certificate" {
 
 module "cdn" {
   source                   = "cloudposse/cloudfront-s3-cdn/aws"
-  version                  = "0.80.0"
+  version                  = "0.82.3"
   context                  = module.this.context
   attributes               = ["ui"]
   acm_certificate_arn      = module.ui_acm_request_certificate.arn
