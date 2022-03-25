@@ -1,4 +1,4 @@
-module github.com/thoroai/console/ibis/backend
+module github.com/holmes89/ibis
 
 go 1.17
 
