@@ -11,7 +11,7 @@ output "ci_secret" {
 }
 
 output "ci_arn" {
-  value = aws_iam_role.gh_instance.arn
+  value = module.role.arn
 }
 
 output "api_function_name" {
