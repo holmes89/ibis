@@ -44,8 +44,18 @@ resource "aws_iam_user" "gh" {
 }
 
 
-resource "aws_iam_role" "gh_instance" {
-  name               = "ibis-ci"
-  path               = "/ci/"
-  assume_role_policy = data.aws_iam_policy_document.ci.json
+module "role" {
+  source = "cloudposse/iam-role/aws"
+  # Cloud Posse recommends pinning every module to a specific version
+  version     = "v0.15.0"
+
+  context = module.this.context
+  policy_description = "Ibis CI access"
+  role_description   = "Allow deployments of CI artifacts"
+
+
+
+  policy_documents = [
+   data.aws_iam_policy_document.ci.json
+  ]
 }
