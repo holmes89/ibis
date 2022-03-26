@@ -10,6 +10,10 @@ output "ci_secret" {
   value = aws_iam_access_key.gh.secret
 }
 
+output "ci_arn" {
+  value = aws_iam_role.gh_instance.arn
+}
+
 output "api_function_name" {
   value = join("", aws_lambda_function.api.*.function_name)
 }

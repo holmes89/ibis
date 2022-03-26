@@ -42,3 +42,10 @@ resource "aws_iam_user" "gh" {
   name = "ibis-ci"
   path = "/ci/"
 }
+
+
+resource "aws_iam_role" "gh_instance" {
+  name               = "ibis-ci"
+  path               = "/ci/"
+  assume_role_policy = data.aws_iam_policy_document.ci.json
+}
