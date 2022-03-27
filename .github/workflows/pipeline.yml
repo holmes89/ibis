@@ -34,6 +34,7 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET }}
         role-to-assume: arn:aws:iam::412092673045:role/jholmes-prod-ibis-ibis
         role-session-name: uideployment
+        role-duration-seconds: 1200
         aws-region: us-east-2
     - name: Copy Build
       run: aws s3 sync dist s3://jholmes-prod-ibis-ibis-ui-origin
@@ -61,6 +62,7 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET }}
         role-to-assume: arn:aws:iam::412092673045:role/jholmes-prod-ibis-ibis
         role-session-name: apideployment
+        role-duration-seconds: 1200
         aws-region: us-east-2
     - name: Update Lambda
       run: aws lambda update-function-code --function-name jholmes-prod-ibis-ibis-lambda-api --region us-east-2 --zip-file fileb://api.zip   
