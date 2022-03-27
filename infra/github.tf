@@ -22,7 +22,8 @@ data "aws_iam_policy_document" "ci" {
       "s3:GetObjectAcl"
     ]
     resources = [
-      module.cdn.s3_bucket_arn,
+      "arn:aws:s3:::${module.cdn.s3_bucket}",
+      "arn:aws:s3:::${module.cdn.s3_bucket}/*",
     ]
     effect    = "Allow"
     sid = "UIAccess"
