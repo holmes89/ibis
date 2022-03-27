@@ -37,7 +37,7 @@ jobs:
         role-duration-seconds: 1200
         aws-region: us-east-2
     - name: Copy Build
-      run: aws s3 sync dist s3://jholmes-prod-ibis-ibis-ui-origin
+      run: aws s3 sync build s3://jholmes-prod-ibis-ibis-ui-origin
   build-api:
     name: Build and Deploy API consumer
     runs-on: ubuntu-latest
