@@ -8,6 +8,8 @@ data "aws_iam_policy_document" "ci" {
     resources = [
       join("", aws_lambda_function.api.*.arn),
     ]
+    effect    = "Allow"
+    sid = "FunctionAccess"
   }
   statement {
     actions = [
@@ -22,6 +24,8 @@ data "aws_iam_policy_document" "ci" {
     resources = [
       module.cdn.s3_bucket_arn,
     ]
+    effect    = "Allow"
+    sid = "UIAccess"
   }
 }
 
@@ -53,6 +57,9 @@ module "role" {
   policy_description = "Ibis CI access"
   role_description   = "Allow deployments of CI artifacts"
 
+  principals = {
+    AWS = [aws_iam_user.gh.arn]
+  }
 
 
   policy_documents = [
