@@ -8,7 +8,6 @@ const Login = () => {
   
   
   const login = () => {
-    debugger;
     Auth.signIn(username, password).then((result) => {
       console.log("logged in")
      }).catch((err) => {

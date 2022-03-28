@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 
 import Amplify, { Auth, Hub } from 'aws-amplify';
 import Login from './components/Login';
+import Home from './pages/Home';
 
 Amplify.configure({
   Auth: {
@@ -17,7 +18,6 @@ const App = () => {
   
   useEffect(() => {
     Hub.listen("auth", ({ payload: { event, data } }) => {
-      debugger;
       switch (event) {
         case "signIn":
         case "cognitoHostedUI":
@@ -44,7 +44,7 @@ const App = () => {
   return (
     <div className="App">
       {user ? (
-        <h2>Logged In</h2>
+        <Home />
       ) : (
        <Login />
       )}

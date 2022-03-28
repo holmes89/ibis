@@ -34,3 +34,7 @@ gen-server:
 	java -jar ./openapi-generator-cli.jar generate -i ./openapi.yaml -g go-server --model-package models --package-name v1 --ignore-file-override false --additional-properties=sourceFolder=./backend/internal/handlers/rest/v1 --additional-properties=featureCORS=true
 	cd backend && go fmt ./...
 	cd backend && goimports -w .
+
+.PHONY: gen-client
+gen-client:
+	java -jar ./openapi-generator-cli.jar generate -i ./openapi.yaml -g javascript -o src --ignore-file-override ./.openapi-generator-ignore --additional-properties=sourceFolder=client
