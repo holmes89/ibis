@@ -57,6 +57,16 @@ data "aws_iam_policy_document" "lambda" { #Should I break it up?
     ]
     resources = ["arn:aws:dynamodb:${data.aws_region.current.name}:*:table/${aws_dynamodb_table.ibis_table.name}"]
   }
+  statement {
+    actions = [
+       "s3:GetObject",
+        "s3:GetObjectVersion"
+    ]
+    resources = [      
+      "${aws_s3_bucket.games.arn}",
+      "${aws_s3_bucket.games.arn}/*",
+      ]
+  }
 
 }
 
