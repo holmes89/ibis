@@ -45,19 +45,6 @@ variable "origin_bucket" {
   default     = ""
 }
 
-variable "core_github_oidc_provider_arn" {
-  description = "Role ARN for GitHub access to the bucket."
-  type        = string
-  default     = ""
-}
-
-
-variable "github_repositories" {
-  description = "List of repositories to grant the OIDC role access to."
-  type        = list(any)
-  default     = []
-}
-
 variable "allow_headers" {
   description = "Allow headers"
   type        = list(string)
