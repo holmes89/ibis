@@ -16,6 +16,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start-prod": "REACT_APP_API_URL=\"https://2kl2914d54.execute-api.us-east-2.amazonaws.com/v1\" react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
