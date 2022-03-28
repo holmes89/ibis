@@ -4,6 +4,7 @@ go 1.17
 
 require (
 	github.com/aws/aws-lambda-go v1.28.0 // indirect
+	github.com/aws/aws-sdk-go v1.43.26 // indirect
 	github.com/aws/aws-sdk-go-v2 v1.15.0 // indirect
 	github.com/aws/aws-sdk-go-v2/config v1.15.0 // indirect
 	github.com/aws/aws-sdk-go-v2/credentials v1.10.0 // indirect
@@ -21,6 +22,9 @@ require (
 	github.com/aws/aws-sdk-go-v2/service/sts v1.16.0 // indirect
 	github.com/aws/smithy-go v1.11.1 // indirect
 	github.com/awslabs/aws-lambda-go-api-proxy v0.12.0 // indirect
+	github.com/felixge/httpsnoop v1.0.1 // indirect
+	github.com/gorilla/handlers v1.5.1 // indirect
 	github.com/gorilla/mux v1.8.0 // indirect
 	github.com/jmespath/go-jmespath v0.4.0 // indirect
+	github.com/rs/zerolog v1.26.1 // indirect
 )

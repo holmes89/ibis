@@ -7,7 +7,9 @@ import (
 	"github.com/aws/aws-lambda-go/events"
 	"github.com/aws/aws-lambda-go/lambda"
 	"github.com/awslabs/aws-lambda-go-api-proxy/gorillamux"
-	"github.com/gorilla/mux"
+	"github.com/holmes89/ibis/internal/database"
+	v1 "github.com/holmes89/ibis/internal/handlers/rest/v1"
+	"github.com/holmes89/ibis/internal/handlers/rest/v1/service"
 )
 
 var (
@@ -20,7 +22,10 @@ func handleRequest(ctx context.Context, request events.APIGatewayProxyRequest) (
 }
 
 func setup() {
-	router := mux.NewRouter() // replace with router from handler
+	db := database.NewConnection()
+	gameRouter := v1.NewGameApiController(service.NewGameServicer(db))
+	userRouter := v1.NewUserApiController(service.NewUserServicer(db))
+	router := v1.NewRouter(gameRouter, userRouter)
 	muxAdapter = gorillamux.New(router)
 }
 
