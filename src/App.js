@@ -30,6 +30,8 @@ const App = () => {
         case "cognitoHostedUI_failure":
           console.log("Sign in failure", data);
           break;
+        default:
+          console.log("unknown event")
       }
     });
 

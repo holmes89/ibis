@@ -1,6 +1,6 @@
 import "./Home.css";
-import React, { useState } from "react";
-import { Auth } from "aws-amplify";
+import React from "react";
+
 
 const Home = () => {
  return(
