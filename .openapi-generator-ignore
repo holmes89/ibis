@@ -27,13 +27,13 @@ main.go
 Dockerfile
 README.md
 backend/**/*_service.go
-src/client/docs/*
-src/client/test/*
-src/client/.openapi-generator-ignore
-src/client/.travis.yml
-src/client/mocha.opts
-src/client/package.json
-src/client/README.md
-src/client/git_push.sh
-src/client/.babelrc
+src/docs/*
+src/test/**/*
+src/.openapi-generator-ignore
+src/.travis.yml
+src/mocha.opts
+src/package.json
+src/README.md
+src/git_push.sh
+src/.babelrc
 
