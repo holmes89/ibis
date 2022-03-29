@@ -10,7 +10,7 @@ const Home = () => {
     const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(()=>{
-        client.get('/games').then(
+        client.get('/game').then(
             (result) => {
                 setGames(result.data)
                 setIsLoaded(true);
@@ -45,7 +45,7 @@ const Home = () => {
         </thead>
         <tbody>
             {games.map((game, i)=>{
-                <tr key={i}>
+               return <tr key={i}>
                     <th>{game.display_name}</th>
                     <td>{game.platform}</td>
                 </tr>
@@ -54,7 +54,7 @@ const Home = () => {
       </table>
     }
  return(
-    <section className="has-background-dark is-full-height">
+    <section className="has-background-dark section">
       <div className="container">
         <p className="title has-text-light">Games</p>
         <div className="columns is-centered">

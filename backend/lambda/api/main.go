@@ -10,7 +10,6 @@ import (
 	"github.com/holmes89/ibis/internal/database"
 	v1 "github.com/holmes89/ibis/internal/handlers/rest/v1"
 	"github.com/holmes89/ibis/internal/handlers/rest/v1/service"
-	"github.com/rs/zerolog/log"
 )
 
 var (
@@ -19,7 +18,7 @@ var (
 )
 
 func handleRequest(ctx context.Context, request events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
-	log.Info().Msg(request.Path)
+	// log.Info().Msg(request.Path)
 	return muxAdapter.ProxyWithContext(ctx, request)
 }
 
